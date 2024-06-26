@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja - Inspirada na Netshoes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Minha Loja</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h2>Bem-vindo à Minha Loja</h2>
+            <p>Confira nossas ofertas incríveis!</p>
+        </section>
+
+        <section class="produtos">
+            <h2>Nossos Produtos</h2>
+            <div class="produto">
+                <img src="tenis-vans-cinza-e-branco-unisex-p.png" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>R$ 100,00</p>
+                <button onclick="adicionarAoCarrinho('Produto 1')">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="santos-uniforme-charlie-brown-jr-8-e1715621451681.png" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>R$ 150,00</p>
+                <button onclick="adicionarAoCarrinho('Produto 2')">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
