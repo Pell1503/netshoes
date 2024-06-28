@@ -1,105 +1,114 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #673ab7;
-    color: #fff;
+    background-color: #4B0082;
+    color: white;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .logo {
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    margin: 0;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    align-items: center;
+    font-size: 24px;
     font-weight: bold;
 }
 
-.banner {
-    background-color: #512da8;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+header .logo h1 {
+    margin: 0;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 main {
-    padding: 20px;
-    text-align: center;
+    flex: 1;
 }
 
 .produtos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.produto {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 10px;
     text-align: center;
-    width: 200px;
+    padding: 20px;
+}
+
+.produtos .produto {
+    display: inline-block;
+    width: 300px; /* Define a largura máxima do bloco do produto */
+    margin: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
 }
 
-.produto:hover {
-    transform: scale(1.05);
+.produtos .produto img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 200px; /* Define a largura máxima das imagens */
+    display: block;
+    margin: 0 auto 10px; /* Centraliza a imagem e adiciona margem inferior */
 }
 
-.produto img {
-    max-width: 100%;
-    height: auto;
-}
-
-.produto h3 {
-    color: #673ab7;
-}
-
-.produto p {
+.produtos .produto h3 {
     font-size: 18px;
-    color: #333;
+    margin: 10px 0;
 }
 
-.produto button {
-    background-color: #673ab7;
-    color: #fff;
+.produtos .produto p {
+    font-size: 14px;
+    color: #666;
+}
+
+button {
+    background-color: #800080; /* Cor roxa */
+    color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.produto button:hover {
-    background-color: #512da8;
+button:hover {
+    background-color: #4B0082; /* Cor roxa mais escura para o hover */
 }
 
 footer {
-    background-color: #673ab7;
-    color: #fff;
+    background-color: #4B0082;
+    color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
