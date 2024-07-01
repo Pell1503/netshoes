@@ -25,30 +25,35 @@
     <main>
         <section class="banner">
             <h2>Bem-vindo à Minha Loja</h2>
-            
         </section>
 
-        <section class="produtos">
+        <section class="busca">
+            <input type="text" id="pesquisa" placeholder="Buscar produtos...">
+            <button onclick="buscarProduto()">Buscar</button>
+        </section>
+
+        <section class="produtos" id="produtos">
             <h2>Nossos Produtos</h2>
-            <div class="produto">
+            <div class="produto" data-nome="Tênis Vans">
                 <img src="tenis-vans-cinza-e-branco-unisex-p.png" alt="Tenis Vans">
                 <h3>Tênis Vans</h3>
                 <p>R$ 100,00</p>
                 <button onclick="adicionarAoCarrinho('Tênis Vans')">Adicionar ao Carrinho</button>
             </div>
-            <div class="produto">
+            <div class="produto" data-nome="Camiseta Charlie Brown Jr">
                 <img src="santos-uniforme-charlie-brown-jr-8-e1715621451681.png" alt="Camiseta Charlie Brown Jr">
                 <h3>Camiseta Charlie Brown Jr</h3>
                 <p>R$ 150,00</p>
                 <button onclick="adicionarAoCarrinho('Camiseta Charlie Brown Jr')">Adicionar ao Carrinho</button>
             </div>
-            <div class="produto">
+            <div class="produto" data-nome="Chuteira Puma">
                 <img src="Imagem do WhatsApp de 2024-06-28 à(s) 08.18.37_0748ef04.jpg" alt="Chuteira Puma">
                 <h3>Chuteira Puma</h3>
                 <p>R$ 200,00</p>
                 <button onclick="adicionarAoCarrinho('Chuteira Puma')">Adicionar ao Carrinho</button>
             </div>
         </section>
+        <section id="resultadoBusca"></section>
     </main>
 
     <footer>
