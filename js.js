@@ -1,6 +1,4 @@
 function adicionarAoCarrinho(produto) {
-    
-    
     window.location.href = 'pagamento.html';
 }
 
@@ -12,7 +10,7 @@ function buscarProduto() {
     produtos.forEach(produto => {
         const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
         if (nomeProduto.includes(pesquisa)) {
-            produto.style.display = 'block';
+            produto.style.display = 'flex'; // Change to flex to show the item as a flex item
             encontrado = true;
         } else {
             produto.style.display = 'none';
@@ -26,3 +24,11 @@ function buscarProduto() {
         resultadoBusca.innerHTML = '';
     }
 }
+
+// Exibir todos os produtos inicialmente
+window.addEventListener('DOMContentLoaded', (event) => {
+    const produtos = document.querySelectorAll('.produto');
+    produtos.forEach(produto => {
+        produto.style.display = 'flex'; // Change to flex to ensure they display correctly
+    });
+});
