@@ -10,25 +10,69 @@ function buscarProduto() {
     produtos.forEach(produto => {
         const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
         if (nomeProduto.includes(pesquisa)) {
-            produto.style.display = 'flex'; // Change to flex to show the item as a flex item
+            produto.style.display = 'flex'; 
             encontrado = true;
+        }
+    });
+    
+let carrinho = [];
+
+
+function adicionarAoCarrinho(nomeProduto) {
+   
+    const produtoExistente = carrinho.find(produto => produto.nome === nomeProduto);
+    if (produtoExistente) {
+       
+        produtoExistente.quantidade++;
+    } else {
+     
+        carrinho.push({ nome: nomeProduto, quantidade: 1 });
+    }
+  
+    atualizarCarrinho();
+}
+
+
+function atualizarCarrinho() {
+    const listaCarrinho = document.getElementById('listaCarrinho');
+    listaCarrinho.innerHTML = '';
+    
+    carrinho.forEach(produto => {
+        const item = document.createElement('li');
+        item.textContent = `${produto.nome} - Quantidade: ${produto.quantidade}`;
+        listaCarrinho.appendChild(item);
+    });
+    
+    const finalizarCompraBtn = document.getElementById('finalizarCompra');
+    finalizarCompraBtn.style.display = carrinho.length > 0 ? 'block' : 'none';
+}
+
+
+function finalizarCompra() {
+    alert('Compra finalizada com sucesso!');
+   
+    carrinho = [];
+   
+    atualizarCarrinho();
+}
+
+
+function buscarProduto() {
+    
+    const pesquisa = document.getElementById('pesquisa').value.toLowerCase();
+  
+    const produtos = document.querySelectorAll('.produto');
+    
+    produtos.forEach(produto => {
+        const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+    
+        if (nomeProduto.includes(pesquisa)) {
+            produto.style.display = 'block';
         } else {
             produto.style.display = 'none';
         }
     });
-
-    const resultadoBusca = document.getElementById('resultadoBusca');
-    if (!encontrado) {
-        resultadoBusca.innerHTML = '<p>Produto não encontrado</p>';
-    } else {
-        resultadoBusca.innerHTML = '';
-    }
 }
+        }
+    
 
-// Exibir todos os produtos inicialmente
-window.addEventListener('DOMContentLoaded', (event) => {
-    const produtos = document.querySelectorAll('.produto');
-    produtos.forEach(produto => {
-        produto.style.display = 'flex'; // Change to flex to ensure they display correctly
-    });
-});

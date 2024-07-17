@@ -105,8 +105,8 @@ main {
 
 .produtos .produto img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens */
-    object-fit: cover; /* Corta a imagem para caber no espaço definido */
+    height: 200px; 
+    object-fit: cover; 
     max-width: 200px;
     display: block;
     margin: 0 auto 10px;
@@ -148,4 +148,35 @@ footer {
     padding: 10px 0;
 }
 
+#carrinho {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
 
+#carrinho h2 {
+    margin-top: 0;
+}
+
+#carrinho ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#carrinho ul li {
+    margin: 5px 0;
+}
+
+#finalizarCompra {
+    display: none; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:#4B0082
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#finalizarCompra:hover {
+    background-color:#4B0082
+}
