@@ -1,38 +1,27 @@
-function adicionarAoCarrinho(produto) {
+// Variável global para o carrinho
+let carrinho = [];
+
+// Função para adicionar ao carrinho e redirecionar para a página de pagamento
+function adicionarAoCarrinho(nomeProduto) {
+    // Verificar se o produto já está no carrinho
+    const produtoExistente = carrinho.find(produto => produto.nome === nomeProduto);
+    
+    if (produtoExistente) {
+        // Se o produto já estiver no carrinho, aumentar a quantidade
+        produtoExistente.quantidade++;
+    } else {
+        // Se o produto não estiver no carrinho, adicionar ao carrinho
+        carrinho.push({ nome: nomeProduto, quantidade: 1 });
+    }
+    
+    // Atualizar o carrinho na interface do usuário
+    atualizarCarrinho();
+
+    // Redirecionar para a página de pagamento
     window.location.href = 'pagamento.html';
 }
 
-function buscarProduto() {
-    const pesquisa = document.getElementById('pesquisa').value.toLowerCase();
-    const produtos = document.querySelectorAll('.produto');
-    let encontrado = false;
-
-    produtos.forEach(produto => {
-        const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
-        if (nomeProduto.includes(pesquisa)) {
-            produto.style.display = 'flex'; 
-            encontrado = true;
-        }
-    });
-    
-let carrinho = [];
-
-
-function adicionarAoCarrinho(nomeProduto) {
-   
-    const produtoExistente = carrinho.find(produto => produto.nome === nomeProduto);
-    if (produtoExistente) {
-       
-        produtoExistente.quantidade++;
-    } else {
-     
-        carrinho.push({ nome: nomeProduto, quantidade: 1 });
-    }
-  
-    atualizarCarrinho();
-}
-
-
+// Função para atualizar a exibição do carrinho
 function atualizarCarrinho() {
     const listaCarrinho = document.getElementById('listaCarrinho');
     listaCarrinho.innerHTML = '';
@@ -47,25 +36,13 @@ function atualizarCarrinho() {
     finalizarCompraBtn.style.display = carrinho.length > 0 ? 'block' : 'none';
 }
 
-
-function finalizarCompra() {
-    alert('Compra finalizada com sucesso!');
-   
-    carrinho = [];
-   
-    atualizarCarrinho();
-}
-
-
+// Função para buscar produtos
 function buscarProduto() {
-    
     const pesquisa = document.getElementById('pesquisa').value.toLowerCase();
-  
     const produtos = document.querySelectorAll('.produto');
     
     produtos.forEach(produto => {
         const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-    
         if (nomeProduto.includes(pesquisa)) {
             produto.style.display = 'block';
         } else {
@@ -73,6 +50,10 @@ function buscarProduto() {
         }
     });
 }
-        }
-    
 
+// Função para finalizar a compra
+function finalizarCompra() {
+    alert('Compra finalizada com sucesso!');
+    carrinho = [];
+    atualizarCarrinho();
+}
