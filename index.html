@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,13 @@
 <body>
     <header>
         <div class="logo">
-            <div class="logo-icon">🏃‍♂️</div>
+            <div class="logo-icon">‍♂️</div>
             <h1>Netnoshoes</h1>
         </div>
         <div class="busca">
-            <input type="text" id="pesquisa" placeholder="Buscar produtos...">
-            <button onclick="buscarProduto()">Buscar</button>
+            <label for="pesquisa" aria-label="Campo de pesquisa">Buscar produtos:</label>
+            <input type="text" id="pesquisa" placeholder="Digite o nome do produto">
+            <button onclick="buscarProduto()" aria-label="Buscar produto">Buscar</button>
         </div>
         <nav>
             <ul>
@@ -33,25 +34,37 @@
 
         <section class="produtos" id="produtos">
             <h2>Nossos Produtos</h2>
-            <div class="produto" data-nome="Tênis Vans">
-                <img src="tenis-vans-cinza-e-branco-unisex-p.png" alt="Tenis Vans">
+            <article class="produto" data-nome="Tênis Vans">
+                <figure>
+                    <img src="tenis-vans-cinza-e-branco-unisex-p.png" alt="Tênis Vans cinza e branco">
+                    <figcaption>Tênis Vans</figcaption>
+                </figure>
                 <h3>Tênis Vans</h3>
-                <p>R$ 100,00</p>
-                <button onclick="adicionarAoCarrinho('Tênis Vans')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="produto" data-nome="Camiseta Charlie Brown Jr">
-                <img src="santos-uniforme-charlie-brown-jr-8-e1715621451681.png" alt="Camiseta Charlie Brown Jr">
+                <p>Preço: R$ 100,00</p>
+                <button onclick="adicionarAoCarrinho('Tênis Vans')" aria-label="Adicionar Tênis Vans ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="produto" data-nome="Camiseta Charlie Brown Jr">
+                <figure>
+                    <img src="santos-uniforme-charlie-brown-jr-8-e1715621451681.png" alt="Camiseta Charlie Brown Jr">
+                    <figcaption>Camiseta Charlie Brown Jr</figcaption>
+                </figure>
                 <h3>Camiseta Charlie Brown Jr</h3>
-                <p>R$ 150,00</p>
-                <button onclick="adicionarAoCarrinho('Camiseta Charlie Brown Jr')">Adicionar ao Carrinho</button>
-            </div>
-            <div class="produto" data-nome="Chuteira Puma">
-                <img src="Imagem do WhatsApp de 2024-06-28 à(s) 08.18.37_0748ef04.jpg" alt="Chuteira Puma">
+                <p>Preço: R$ 150,00</p>
+                <button onclick="adicionarAoCarrinho('Camiseta Charlie Brown Jr')" aria-label="Adicionar Camiseta Charlie Brown Jr ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="produto" data-nome="Chuteira Puma">
+                <figure>
+                    <img src="Imagem do WhatsApp de 2024-06-28 à(s) 08.18.37_0748ef04.jpg" alt="Chuteira Puma">
+                    <figcaption>Chuteira Puma</figcaption>
+                </figure>
                 <h3>Chuteira Puma</h3>
-                <p>R$ 200,00</p>
-                <button onclick="adicionarAoCarrinho('Chuteira Puma')">Adicionar ao Carrinho</button>
-            </div>
+                <p>Preço: R$ 200,00</p>
+                <button onclick="adicionarAoCarrinho('Chuteira Puma')" aria-label="Adicionar Chuteira Puma ao carrinho">Adicionar ao Carrinho</button>
+            </article>
         </section>
+
         <section id="resultadoBusca"></section>
     </main>
 
