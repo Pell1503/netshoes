@@ -1,1 +1,1 @@
-meu primeiro site como portfólio para .
+meu primeiro site como portfólio.
